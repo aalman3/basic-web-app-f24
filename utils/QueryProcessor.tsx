@@ -41,5 +41,25 @@ export default function QueryProcessor(query: string): string {
     return (num1 - num2).toString();
   }
 
+
+  // Function to check if a number is prime
+function isPrime(num: number): boolean {
+  if (num <= 1) return false; // Primes are greater than 1
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+// Check for prime number queries (e.g., "Which of the following numbers are primes: 45, 16, 61, 75, 41?")
+const primeNumbersMatch = query.toLowerCase().match(/which of the following numbers are primes: (.*)\?/);
+if (primeNumbersMatch) {
+  const numbers = primeNumbersMatch[1].split(',').map(num => parseInt(num.trim()));
+  const primeNumbers = numbers.filter(isPrime); // Filter to get prime numbers only
+  return primeNumbers.length > 0 ? primeNumbers.join(', ') : "No primes found";
+}
+
+
+
   return "";
 }
