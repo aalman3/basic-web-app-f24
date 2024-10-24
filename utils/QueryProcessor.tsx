@@ -33,5 +33,13 @@ export default function QueryProcessor(query: string): string {
     const largestNumber = Math.max(...numbers);
     return largestNumber.toString();
   }
+
+  const subtractionMatch = query.toLowerCase().match(/what is (\d+) minus (\d+)\?/);
+  if (subtractionMatch) {
+    const num1 = parseInt(subtractionMatch[1]);
+    const num2 = parseInt(subtractionMatch[2]);
+    return (num1 - num2).toString();
+  }
+
   return "";
 }
