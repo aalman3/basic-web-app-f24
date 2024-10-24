@@ -10,13 +10,13 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("andrew id")) {
     //TODO add your Andrew ID below
     //TODO update the corresponding test case in __tests__
-    return ( "rsharaf" );
+    return ( "aalmana" );
   }
 
   if (query.toLowerCase().includes("What is your name?")) {
     //TODO add your Andrew ID below
     //TODO update the corresponding test case in __tests__
-    return ( "rsharaf-313" );
+    return ( "aalmana-313" );
   }
 
   const arithmeticMatch = query.toLowerCase().match(/what is (\d+) plus (\d+)\?/);
